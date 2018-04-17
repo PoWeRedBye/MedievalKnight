@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/weapon_and_shied_fragment"
+        android:icon="@drawable/sword_shield"
+        android:title="@string/weapon_and_shield" />
+    <item
+        android:id="@+id/chest_armor_fragment"
+        android:icon="@drawable/standart_armor"
+        android:title="@string/chest_armory" />
+    <item
+        android:id="@+id/gloves_fragment"
+        android:icon="@drawable/standart_gloves"
+        android:title="@string/gloves_armory" />
+    <item
+        android:id="@+id/boots_fragment"
+        android:icon="@drawable/standart_boots"
+        android:title="@string/boots_armory" />
+    <item
+        android:id="@+id/helmet_fragment"
+        android:icon="@drawable/standart_helmet"
+        android:title="@string/helmet_armory" />
+</menu>

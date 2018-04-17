@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MedievalKnight</string>
+    <string name="submit">Submit</string>
+    <string name="weapon">Weapon</string>
+    <string name="weapon_and_shield">Weapons and Shields</string>
+    <string name="chest_armory">Chests</string>
+    <string name="gloves_armory">Gloves</string>
+    <string name="boots_armory">Boots</string>
+    <string name="helmet_armory">Helmet</string>
+    <string name="character_name_is_empty">Character name is empty!!!</string>
+    <string name="info">Info</string>
+    <string name="marketplace">Marketplace</string>
+    <string name="inventory">Inventory</string>
+    <string name="arena">Arena</string>
+    <string name="some_armor_item">some armor item</string>
+    <string name="armor_dmg_bonus">Damage:</string>
+    <string name="def">Defence:</string>
+    <string name="some_dmg">some dmg</string>
+    <string name="some_def">some defence</string>
+    <string name="equip">equip</string>
+    <string name="some_character_name">Some Character Name</string>
+    <string name="character_hitpoints">HP:</string>
+    <string name="equipped_items">Equipped Items:</string>
+    <string name="leave_the_arena">Leave</string>
+</resources>
