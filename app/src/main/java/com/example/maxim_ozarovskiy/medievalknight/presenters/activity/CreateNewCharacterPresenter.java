@@ -2,7 +2,9 @@ package com.example.maxim_ozarovskiy.medievalknight.presenters.activity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.text.TextUtils;
 
+import com.example.maxim_ozarovskiy.medievalknight.R;
 import com.example.maxim_ozarovskiy.medievalknight.data.DataBaseAdapter;
 import com.example.maxim_ozarovskiy.medievalknight.interfaces.activity.CreateNewCharacterContract;
 import com.example.maxim_ozarovskiy.medievalknight.model.ArmorItems;
@@ -42,7 +44,7 @@ public class CreateNewCharacterPresenter implements CreateNewCharacterContract.P
         SharedPreferences.Editor editor = mySettings.edit();
         editor.putInt(APP_PREFERENCES_CHARACTER_ID, id);
         editor.apply();
-        view.callbackNewCharacter(knight, armorItemsList);
+        view.callbackNewCharacter();
     }
 
     private void getEquippedItems(){
@@ -149,6 +151,10 @@ public class CreateNewCharacterPresenter implements CreateNewCharacterContract.P
 
     @Override
     public void createNewCharacter(String characterName) {
+        if (TextUtils.isEmpty(characterName)){
+            view.callbackError("Character name is empty");
+        } else {
         createMyCharacter(characterName);
+        }
     }
 }

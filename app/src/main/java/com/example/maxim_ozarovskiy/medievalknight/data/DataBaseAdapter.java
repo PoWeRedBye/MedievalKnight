@@ -141,17 +141,6 @@ public class DataBaseAdapter {
         }
     }
 
-    public long createNewArmorItems(ArmorItems armorItems){
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(MyFieldDB.ITEM_NAME, armorItems.getItemName());
-        contentValues.put(MyFieldDB.ITEM_ATTACK_POWER_BONUS, armorItems.getAttackBonus());
-        contentValues.put(MyFieldDB.ITEM_DEFENCE_BONUS, armorItems.getDefenceBonus());
-        contentValues.put(MyFieldDB.ITEM_CATEGORY, armorItems.getCategory());
-        contentValues.put(MyFieldDB.ITEM_ICON, armorItems.getIcon());
-
-        return mDb.insert(MyFieldDB.ARMORY_TABLE, null, contentValues);
-    }
-
     public long createNewCharacter(Knight knight) {
 
         ContentValues initialValues = new ContentValues();
@@ -176,41 +165,6 @@ public class DataBaseAdapter {
             }
         }
         return mDb.insert(MyFieldDB.CHARACTER_INFO_TABLE, null, initialValues);
-    }
-
-    private void getMyCharacter(){
-
-    }
-
-    public long updateCharacter(int id, Knight knight) {
-        try {
-            ContentValues contentValues = new ContentValues();
-            contentValues.put(MyFieldDB.CHARACTER_ATTACK_DAMAGE, knight.getAttackPower());
-            contentValues.put(MyFieldDB.CHARACTER_DEFENCE, knight.getDefence());
-            contentValues.put(MyFieldDB.CHARACTER_HP, knight.getHp());
-            for (int i = knight.getArmorItems().size(); i >= 0; i--) {
-                if (knight.getArmorItems().get(i + 1).getCategory().equals("ARMOR")) {
-                    contentValues.put(MyFieldDB.EQUIPPED_ARMOR_ID, knight.getArmorItems().get(i + 1).getId());
-                } else if (knight.getArmorItems().get(i + 1).getCategory().equals("HELM")) {
-                    contentValues.put(MyFieldDB.EQUIPPED_HELM_ID, knight.getArmorItems().get(i + 1).getId());
-                } else if (knight.getArmorItems().get(i + 1).getCategory().equals("BOOTS")) {
-                    contentValues.put(MyFieldDB.EQUIPPED_BOOTS_ID, knight.getArmorItems().get(i + 1).getId());
-                } else if (knight.getArmorItems().get(i + 1).getCategory().equals("GLOVES")) {
-                    contentValues.put(MyFieldDB.EQUIPPED_GLOVES_ID, knight.getArmorItems().get(i + 1).getId());
-                } else if (knight.getArmorItems().get(i + 1).getCategory().equals("SWORD")) {
-                    contentValues.put(MyFieldDB.EQUIPPED_SWORD_ID, knight.getArmorItems().get(i + 1).getId());
-                } else if (knight.getArmorItems().get(i + 1).getCategory().equals("SHIELD")) {
-                    contentValues.put(MyFieldDB.EQUIPPED_SHIELD_ID, knight.getArmorItems().get(i + 1).getId());
-                } else {
-                    break;
-                }
-            }
-
-            return mDb.update(MyFieldDB.CHARACTER_INFO_TABLE, contentValues, MyFieldDB.CHARACTER_ID + " =?", new String[]{String.valueOf(id)});
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
     }
 
     public long updateArmorItem(int id, ArmorItems armorItem) {
@@ -248,10 +202,6 @@ public class DataBaseAdapter {
 
 
     }
-
-    /*public void delProductRec(long id) {
-        mDb.delete(MyFieldDB.PRODUCT_TABLE, MyFieldDB.PRODUCTID + " = " + id, null);
-    }*/
 
 
     public List<ArmorItems> getArmorItemsByCategoryFromDB(String categoryName) {

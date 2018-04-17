@@ -1,11 +1,8 @@
 package com.example.maxim_ozarovskiy.medievalknight.activity;
 
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -17,9 +14,6 @@ import com.example.maxim_ozarovskiy.medievalknight.R;
 import com.example.maxim_ozarovskiy.medievalknight.interfaces.activity.ArenaActivityContract;
 import com.example.maxim_ozarovskiy.medievalknight.model.Knight;
 import com.example.maxim_ozarovskiy.medievalknight.presenters.activity.ArenaActivityPresenter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.example.maxim_ozarovskiy.medievalknight.activity.SplashActivity.KNIGHT;
 

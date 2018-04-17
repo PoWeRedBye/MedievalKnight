@@ -46,10 +46,8 @@ public class CreateNewCharacterActivity extends AppCompatActivity implements Cre
 
     }
 
-    private void startMainActivity(Knight knight, List<ArmorItems> armorItemsList) {
+    private void startMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("knight", knight);
-        //intent.putExtra("armorList", (Parcelable) armorItemsList);
         startActivity(intent);
         finish();
     }
@@ -61,8 +59,8 @@ public class CreateNewCharacterActivity extends AppCompatActivity implements Cre
     }
 
     @Override
-    public void callbackNewCharacter(Knight knight, List<ArmorItems> armorItems) {
-        startMainActivity(knight, armorItems);
+    public void callbackNewCharacter() {
+        startMainActivity();
     }
 
     @Override

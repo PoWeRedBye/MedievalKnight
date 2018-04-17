@@ -55,13 +55,6 @@ public class SplashActivityPresenter implements SplashContract.Presenter {
         view.createNewCharacter();
     }
 
-    /*private void getMyCaracter(){
-        dbAdapter = new DataBaseAdapter(context);
-        CharacterInfo characterInfo = dbAdapter.getMyCharacterFromDB();
-        dbAdapter.close();
-        view.callbackMyCharacter(characterInfo);
-    }*/
-
     private void getMyCharacter() {
         dbAdapter = new DataBaseAdapter(context);
         dbAdapter.open();

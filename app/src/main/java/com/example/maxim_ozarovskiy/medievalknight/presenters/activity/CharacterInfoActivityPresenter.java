@@ -20,7 +20,6 @@ public class CharacterInfoActivityPresenter implements CharacterInfoContract.Pre
     CharacterInfoContract.View view;
     private Context context;
     private List<ArmorItems> armorItemsList;
-    private Knight knight;
     private String armorName;
     private String helmName;
     private String glovesName;

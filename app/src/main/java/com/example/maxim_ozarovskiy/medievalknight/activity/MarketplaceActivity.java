@@ -24,7 +24,6 @@ public class MarketplaceActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigation;
     private Fragment fragment;
     private FragmentManager fragmentManager;
-    private Toolbar toolbar;
     private FragmentTransaction transaction;
 
     @Override
